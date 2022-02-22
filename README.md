@@ -10,7 +10,7 @@
 
 - 부제목 내용
 
-```
+```python
 code
 ```
 
@@ -227,6 +227,150 @@ import math
 
 print(math.pi) # 3.141592653589793
 print(math.ceil(5.1)) # 6 / 올림
+```
+
+</div>
+</details>
+
+---
+
+<details>
+<summary>4일차 학습 요약</summary>
+<div>
+
+### 문자형
+
+#### 문자열 생성
+
+```python
+str1 = 'Hello Python'
+str2 = "Anaconda"
+str3 = """이것도 가능해"""
+str4 = '''이것도 가능하구나'''
+
+빈 문자열 생성
+str_t1 = ''
+str_t2 = str()
+```
+
+#### 이스케이프 문자
+
+- \n : 개행
+- \t : 탭
+- \\ : 문자
+- \' : 문자
+- \" : 문자
+- \000 : 널 문자
+
+```python
+print("I'm Boy") # I'm boy
+print('I\'m boy') # I'm boy
+print('a \t b') # a        b
+print('a \n b') #a
+                # b
+```
+
+#### 멀티라인 입력
+
+- ''' ''' 또는 """ """
+- \ 를 사용하면 개행할 수 있다
+
+```python
+multi_str = '''
+멀티라인을
+입력해볼게요
+과연 이게 문자열인가요?
+'''
+
+multi_str2 = \
+'''
+역 슬래시(\)를 사용하면
+개행을 할 수 있다
+개행한 다음의 내용이 변수에 할당된다.
+'''
+```
+
+#### 문자열 연산
+
+```python
+### 시퀀스는 'in' 과 'not in' 연산을 지원한다.
+str_o1 = 'Hello'
+str_o2 = 'Python'
+str_o3 = 'How are you?'
+
+print ('a' not in str_o1) # True
+print('p' in str_o2) # False
+print('P' in str_o2) # True
+print('?' in str_o3) # True
+```
+
+#### 문자열 형 변환
+
+- <code>str()</code> : 문자형으로 변환
+
+```python
+is_str1 = str(123)
+is_str2 = str(True)
+is_str3 = str(3.14)
+print (type(is_str1)) # <class 'str'>
+print (type(is_str2)) # <class 'str'>
+print (type(is_str3)) # <class 'str'>
+```
+
+#### 문자열 함수
+
+- <code>len(str)</code> : 문자열 길이 확인
+- <code>upper()</code> : 대문자로 변환
+- <code>capitalize()</code> : 첫번째 문자를 대문자로 변환
+- <code>isalpha()</code> : 문자만 있는지 확인
+- <code>isalnum()</code> : 문자와 숫자만 있는지 확인
+- <code>startswith()</code> : 문자열의 시작이 무엇인지 확인
+- <code>endwith()</code> : 문자열의 끝이 무엇인지 확인
+- <code>count()</code> : 문자열에 몇 개의 문자가 있는지 확인
+- <code>replace(old, new)</code> : old -> new 문자열을 변경한다.
+- <code>split()</code> : 문자열을 구분자로 나누어 리스트로 반환한다.
+- <code>sorted()</code>: 문자열을 정렬한다. (a-z 순서대로)
+
+#### 반복(시퀀스)
+
+- <code>dir()</code> : 객체에 정의된 변수 또는 함수를 보여준다. \_\_iter\_\_가 있다면 반복(시퀀스) 가능
+
+```python
+im_str = 'Good Boy!'
+
+print(dir(im_str))
+for i in im_str:
+    print(i)
+```
+
+#### 슬라이싱
+
+```python
+str_s1 = "Hello Python"
+
+print(str_s1[4]) # o
+print(str_s1[-1]) # n
+print(str_s1[-3]) # h, 뒤에서 세번째
+print(str_s1[0:3]) # Hel, 0~3
+print(str_s1[:3]) # Hel, 처음~3
+print(str_s1[3:]) # lo Python, 3~마지막
+print(str_s1[:len(str_s1)]) # Hello Python, 처음~문자길이
+print(str_s1[:len(str_s1) - 1]) # Hello Pytho, 처음~(문자 길이 + 연산)
+print(str_s1[1:9:3]) # eoy, 3번째는 간격, 처음~9 3번씩 건너뛴 문자열
+print(str_s1[-5:]) # ython, 뒤에서 5~마지막
+print(str_s1[1:-2]) # ello Pyth, 1~마지막에서 두번째 전까지
+print(str_s1[::2]) # HloPto, 처음~마지막 2개씩 건너뛴 문자열
+print(str_s1[::-1]) # nohtyP olleH, 역순
+```
+
+#### 아스키 코드(ASCII)
+
+- <code>ord()</code> : 문자 -> 아스키 코드
+- <code>chr()</code> : 아스키 코드 -> 문자
+
+```python
+ord('z') # 122
+chr(122) # 'z'
 ```
 
 </div>
