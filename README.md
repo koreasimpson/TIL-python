@@ -29,7 +29,7 @@ code
 
 - 콤마(,)로 구분된 문자열에 separator를 적용하여 출력
 
-```
+```python
     print("P", "Y", "T", "H", "O", "N", sep='')
     // PYTHON
     print("P", "Y", "T", "H", "O", "N", sep='-')
@@ -40,7 +40,7 @@ code
 
 - print 내용간 줄바꿈이 되어 출력되지 않고, end 옵션의 내용 다음에 같은 라인에서 출력된다.
 
-```
+```python
     print('Welcome to', end='')
     print(' Python', end='     last')
     print('!')
@@ -52,7 +52,7 @@ code
 - format 옵션(d, s, f, ...) // d: digit, s: string, f: float, ...
 - format 옵션을 사용하면 출력되는 문자열을 자동으로 포맷팅하여 출력한다.
 
-```
+```python
     print('%s %s' % ('one', 'two'))
     // one two
 
@@ -76,7 +76,7 @@ code
 - 파이썬에서는 변수 키워드가 없다 (var, let, const 등등..)
 - 파이썬에서 변수는 동적 타입이다
 
-```
+```python
 num1 = 100
 str1 = 'Hello'
 ```
@@ -85,7 +85,7 @@ str1 = 'Hello'
 
 - <code>type(n)</code> : 변수의 자료형을 확인
 
-```
+```python
 num1 = 700
 str1 = 'Hello'
 
@@ -97,7 +97,7 @@ print(type(num1)) # <class 'str'>
 
 - 파이썬에서는 값 참조가 아닌 값 복사가 된다.
 
-```
+```python
 a = 777
 print(a) # 777
 
@@ -113,7 +113,7 @@ print(b) # 777 # 이후에 a의 값이 변해도, b는 할당된 그 값을 그�
 - 파이썬은 중복된 객체를 만드려고 하지 않는다. 이미 기존에 할당된 값을 새로운 변수에 담으려고 하는 경우 새로운 변수의 id는 기존에 할당된 값을 갖고 있는 변수의 id와 동일한 값을 갖게 된다.
 - 그 이후에 기존에 없던 새로운 값이 할당되면 새로운 id를 갖게 된다.
 
-```
+```python
 a = 888
 b = 777
 print(id(a)) # 4452267376
@@ -371,6 +371,60 @@ print(str_s1[::-1]) # nohtyP olleH, 역순
 ```python
 ord('z') # 122
 chr(122) # 'z'
+```
+
+</div>
+</details>
+
+---
+
+<details>
+<summary>5일차 학습 요약</summary>
+<div>
+
+### 리스트 자료형 - 1
+
+#### 리스트
+
+- 순서가 있다. (반복이 가능하다)
+- 중복이 허용된다.
+- 수정 및 삭제가 가능하다.
+
+#### 선언
+
+```python
+a = [] # <class 'list'>
+b = list()
+c = [5, 10 ,15]
+d = [1000, 10000, 'Ace', 'Base', 'Captain']
+e = [1, 10, 100, ['january', 'february', 'march']]
+f = [21.42, 'footbar', 3, 4, False, 3.14159]
+```
+
+#### 인덱싱
+
+```python
+print('d : ', type(d), d) # d :  <class 'list'> [1000, 10000, 'Ace', 'Base', 'Captain']
+print('d[1] : ', d[1]) # 10000
+print('연산도 가능 : ', d[0] + d[1]) # 11000
+print('배열 내 배열에 접근 : ', e[-1][1]) # february
+print('문자를 배열로 변환 : ', list(e[-1][1])) # ['f', 'e', 'b', 'r', 'e', 'b', 'l', 'y']
+```
+
+#### 슬라이싱
+
+```python
+print('d[1:3] : ', d[0:3]) # [1000, 10000, 'Ace']
+print(d[2:]) # ['Ace', 'Base', 'Captain']
+print(e[-1][1:3]) # ['february', 'march']
+```
+
+#### 리스트 연산
+
+```python
+print(c + d) # [5, 10, 15, 1000, 10000, 'Ace', 'Base', 'Captain']
+print(d + c) # [1000, 10000, 'Ace', 'Base', 'Captain', 5, 10, 15]
+print(c * 3) # [5, 10, 15, 5, 10, 15, 5, 10, 15]
 ```
 
 </div>
