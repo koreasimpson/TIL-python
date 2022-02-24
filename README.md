@@ -431,3 +431,82 @@ print(c * 3) # [5, 10, 15, 5, 10, 15, 5, 10, 15]
 </details>
 
 ---
+
+<details>
+<summary>6일차 학습 요약</summary>
+<div>
+
+### 리스트 자료형 2
+
+#### 리스트 비교
+
+```python
+c = [1,2,3,4,5,6]
+## 값 비교
+print(c == c[:3] + c[3:]) # True
+
+## 같은 id 값
+temp = c
+print(c == temp) # True
+print(id(c) == id(temp)) # True, 파이썬은 내부적으로 최적화를 해서 자료구조를 저장하고 있다.
+```
+
+#### 리스트 수정 삭제
+
+```python
+z = [1,2,3,4,5,6]
+z[0] = 'a'
+print(z) # ['a', 2, 3, 4, 5, 6]
+z[1:2] = ['a','b','c']
+print(z) # ['a', 'a', 'b', 'c', 3, 4, 5, 6]
+z[1:3] = []
+print(z) # ['a', 'c', 3, 4, 5, 6]
+del z[3]
+print(z) # ['a', 'c', 3, 5, 6]
+```
+
+#### 리스트 함수(메서드)
+
+- <code>myList.append(1)</code> : 마지막에 추가
+- <code>myList.pop()</code> : 마지막 요소 삭제
+- <code>myList.sort()</code> : 오름차순 정렬
+- <code>myList.reverse()</code> : 내림차순 정렬
+- <code>myList.insert(index, value)</code> : index 위치에 value 추가
+- <code>myList.remove(value)</code> : value 삭제
+- <code>myList.index(value)</code> : value 위치 확인
+- <code>myList.count(value)</code> : value 개수 확인
+- <code>myList.clear()</code> : 모든 요소 삭제
+- <code>myList.copy()</code> : 복사
+- <code>myList.extend(list)</code> : 리스트 연결
+
+```python
+myList = [1,'a',2,'c',3,'z',4,'o',5,'q',6]
+strList = ['z', 'a', 'c', 'q', 'o']
+
+myList.append(9)
+print(myList) # [1, 'a', 2, 'c', 3, 'z', 4, 'o', 5, 'q', 6, 9]
+myList.pop()
+print(myList) # [1, 'a', 2, 'c', 3, 'z', 4, 'o', 5, 'q', 6]
+strList.sort()
+print(strList) # ['a', 'c', 'o', 'q', 'z']
+myList.reverse()
+print(myList) # [6, 'q', 5, 'o', 4, 'z', 3, 'c', 2, 'a', 1]
+myList.insert(0, 0)
+print(myList) # [0, 6, 'q', 5, 'o', 4, 'z', 3, 'c', 2, 'a', 1]
+myList.remove('z')
+print(myList) # [0, 6, 'q', 5, 'o', 4, 3, 'c', 2, 'a', 1]
+myList.index('q')
+print(myList.index('q')) # 2
+myList.count('c')
+print(myList.count('c')) # 1
+myList.clear()
+print(myList) # []
+myList.append('a')
+myList.extend([1,2,3,4,5])
+print(myList) # ['a', 1, 2, 3, 4, 5]
+```
+
+</div>
+</details>
+
+---
